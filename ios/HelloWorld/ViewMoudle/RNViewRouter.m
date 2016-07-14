@@ -14,13 +14,18 @@
 -(void) callFunction:(NSString *)functionName token:(NSString *)token parameters:(NSDictionary *)parameters callback:(RCTResponseSenderBlock)callback{
   NSLog(@"%@",functionName);
   if ([functionName.lowercaseString isEqualToString:@"login"]) {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
       [[ViewManager shared]showLoginViewController:^(NSString *key, NSDictionary *userInfo) {
-      if ([key.lowercaseString isEqualToString:@"login.success"]) {
-        if (callback) {
-          callback(@[key,userInfo]);
+        if ([key.lowercaseString isEqualToString:@"login.success"]) {
+          if (callback) {
+            callback(@[key,userInfo]);
+          }
         }
-      }
-    }];
+      }];
+      
+    });
+    
   }
 }
 @end
