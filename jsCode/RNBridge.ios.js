@@ -17,7 +17,11 @@ function route(c1, c2, c3, c4,c5)
 		callback = c5;
 	}
 	var manager = require('react-native').NativeModules.RNBridge;
-	manager.callNativeWithCallback(module,func, token||'', params||{}, callback || ((e) => null));
+	if(callback){
+		manager.callNativeWithCallback(module,func, token||'', params||{}, callback || ((e) => null));
+	}else {
+		manager.callNative(module,func, token||'', params||{});
+	}
 }
 
 module.exports = {

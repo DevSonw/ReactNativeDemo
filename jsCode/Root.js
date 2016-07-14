@@ -9,9 +9,13 @@ import {
 var AppRoute = require('./RNBridge');
 class HelloWorld extends Component {
   login(){
+    //with callback
     AppRoute.route('View','login', (rst, loginInfo)=>{
         console.log(loginInfo);
-    })
+    });
+    //without callback
+    AppRoute.route('View','login',);
+
 
   };
   render() {
