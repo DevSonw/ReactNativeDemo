@@ -14,7 +14,7 @@ class HelloWorld extends Component {
         console.log(loginInfo);
     });
     //without callback
-    AppRoute.route('View','login',);
+  //  AppRoute.route('View','login',);
 
 
   };
