@@ -16,33 +16,27 @@
 
 @implementation RNRouteManager
 
-+ (instancetype)sharedInstance
-{
++ (instancetype)sharedInstance {
   static RNRouteManager *instance = nil;
   static dispatch_once_t onceToken;
   dispatch_once(&onceToken, ^{
     instance = [[RNRouteManager alloc] init];
   });
-  
   return instance;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
   if (self = [super init]) {
     _set = [[NSMutableSet alloc] init];
   }
-  
   return self;
 }
 
-- (void)retainObject:(id)object
-{
+- (void)retainObject:(id)object {
   [self.set addObject:object];
 }
 
-- (void)releaseObject:(id)object
-{
+- (void)releaseObject:(id)object {
   [self.set removeObject:object];
 }
 @end

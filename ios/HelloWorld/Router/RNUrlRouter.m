@@ -9,7 +9,7 @@
 #import "RNUrlRouter.h"
 
 #pragma mark - runinMainThrad
-void runBlockInMainThread(dispatch_block_t block){
+void runBlockInMainThread(dispatch_block_t block) {
   if (block == nil) {
     return;
   }
@@ -37,7 +37,7 @@ void runBlock(dispatch_block_t block) {
 
 #pragma mark - 不局限于形式，此处可以灵活运用
 
-- (void)openURL:(NSDictionary *)parameters{
+- (void)openURL:(NSDictionary *)parameters {
   NSString *urlString = parameters[@"url"];
   RCTAssert(urlString && urlString.length > 0,@"url can't be bull");
   runBlockInMainThread(^{

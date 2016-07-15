@@ -10,8 +10,7 @@
 
 @implementation LoginViewController
 
--(void)viewDidLoad{
-  NSLog(@"did load");
+-(void)viewDidLoad {
   self.view.backgroundColor = [UIColor whiteColor];
   UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
   button.frame = CGRectMake(100, 100, 100, 50);

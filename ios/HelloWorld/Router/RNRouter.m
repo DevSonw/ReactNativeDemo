@@ -17,8 +17,7 @@
              token:(NSString*)token
         parameters:(NSDictionary *)parameters
             bridge:(RCTBridge *)bridge
-          callback:(RCTResponseSenderBlock)callback
-{
+          callback:(RCTResponseSenderBlock)callback {
   RCTAssert(moduleName, @"module name can't be null.");
   RCTAssert(functionName, @"function name can't be null.");
   NSString *moduleClassName = [[@"RN" stringByAppendingString:moduleName] stringByAppendingString:@"Router"];
@@ -36,8 +35,7 @@
   //subclass override.
 }
 
-- (UIViewController *)viewController
-{
+- (UIViewController *)viewController {
   if (_viewController) {
     return _viewController;
   } else {
@@ -81,8 +79,7 @@
   return statusDict;
 }
 
-- (void)setBridge:(RCTBridge *)bridge
-{
+- (void)setBridge:(RCTBridge *)bridge {
   if (bridge && [bridge isKindOfClass:[RCTBridge class]]) {
     if (bridge.delegate && [bridge.delegate isKindOfClass:[RCTRootView class]]) {
       RCTRootView *view  = (RCTRootView *)bridge.delegate;

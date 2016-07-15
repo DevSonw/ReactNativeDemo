@@ -16,11 +16,11 @@ function route(c1, c2, c3, c4,c5)
 		params = c4;
 		callback = c5;
 	}
-	var manager = require('react-native').NativeModules.RNBridge;
+	var bridge = require('react-native').NativeModules.RNBridge;
 	if(callback){
-		manager.callNativeWithCallback(module,func, token||'', params||{}, callback || ((e) => null));
+		bridge.callNativeWithCallback(module,func, token||'', params||{}, callback || ((e) => null));
 	}else {
-		manager.callNative(module,func, token||'', params||{});
+		bridge.callNative(module,func, token||'', params||{});
 	}
 }
 

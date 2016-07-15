@@ -25,7 +25,6 @@
 }
 
 - (void)showLoginViewController:(ResultBlock)resultBlock {
-  NSLog(@"native");
   LoginViewController *loginVc = [[LoginViewController alloc]init];
   loginVc.resultBlock = resultBlock;
   [[self getNav]pushViewController:loginVc animated:YES];
